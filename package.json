@@ -1,0 +1,17 @@
+{
+  "name": "mcc-szamla-bot",
+  "version": "1.0.0",
+  "description": "MCC számla adó Discord bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "Erdősi-Szücs Frigyes",
+  "license": "ISC",
+  "dependencies": {
+    "bs58": "^4.0.1",
+    "discord.js": "^12.5.3",
+    "elliptic": "^6.5.4",
+    "micro_coin": "file:MicroCoin-Javacript-SDK"
+  }
+}
