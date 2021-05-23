@@ -19,7 +19,7 @@ function hexFromBase58(base58) {
 
 try{
 client.on('message', message => {
-    if(message.channel.id !== "465583027217760266" || message.channel.id !== "477490233370214400") {     //channel id is set to Microcoin's 
+    if(message.channel.id !== "465583027217760266" && message.channel.id !== "477490233370214400") {     //channel id is set to Microcoin's 
         console.log("sent into wrong channel " + message.channel.id);
         return;
     }
@@ -110,7 +110,7 @@ client.on('message', message => {
             }
             catch(err){
                 console.log("Error" + err)
-                continue;
+                return;
             }
 
         }).catch(err => {
