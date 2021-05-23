@@ -20,10 +20,15 @@ Next, we install the dependencies
 ```
 npm install
 ```
-Now, we have to set our private key and discord bot ID in index.js
-After that, we can start the program:
+Now, we have to set our private key (in HEX)
 ```
 nano index.js 6
+```
+Next, the Discord bot's ID
+```
 nano index.js 104
+```
+After that, we can start the program:
+```
 node index.js
 ```
