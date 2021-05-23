@@ -39,7 +39,7 @@ client.on('message', message => {
 	catch(err){
 		message.channel.send("Rossz a kulcsod!")
 		console.log(err)
-		continue
+		return
 	}
         
         console.log(decoded)
