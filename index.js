@@ -17,9 +17,14 @@ function hexFromBase58(base58) {
     return bs58.decode(base58).toString('hex').toUpperCase();
 }
 
+try{
 client.on('message', message => {
-    if(message.channel.id !== "465583027217760266" || message.author.bot) {     //channel id is set to Microcoin's 
+    if(message.channel.id !== "465583027217760266" || message.channel.id !== "477490233370214400") {     //channel id is set to Microcoin's 
         console.log("sent into wrong channel " + message.channel.id);
+        return;
+    }
+
+    if(message.author.bot) {
         return;
     }
 
@@ -34,15 +39,16 @@ client.on('message', message => {
     }
     else {
         try{
-		var decoded = hexFromBase58(msg)
-	}
-	catch(err){
-		message.channel.send("Rossz a kulcsod!")
-		console.log(err)
-		return
-	}
-        
+		    var decoded = hexFromBase58(msg)
+	    }
+	    catch(err){
+	    	message.channel.send("Rossz a kulcsod!")
+	    	console.log(err)
+	    	return
+	    }
+    
         console.log(decoded)
+        
         if(decoded[1] !== '1' || decoded[2] !== 'C' || decoded[3] !== 'A'){
             message.channel.send("Rossz a kulcsod!")
             console.log("wrong key")
@@ -90,22 +96,35 @@ client.on('message', message => {
 
             console.log("set new owner")
             try{
-            accountApi.startChangeKey(request).then(function (transaction) { 
-                var signature = myKey.sign(transaction.getHash());
-                transaction.signature = { "r": signature.r, "s": signature.s };
-                accountApi.commitChangeKey(transaction).then((response)=>console.log(response), e => console.error("Error!!! " + e));
-            });
-            console.log(request)
-            message.channel.send("A " + AccToChange + " számla mostantól a tied!")
-            console.log("executed transaction")
+                accountApi.startChangeKey(request).then(function (transaction) { 
+                    var signature = myKey.sign(transaction.getHash());
+                    transaction.signature = { "r": signature.r, "s": signature.s };
+                    accountApi.commitChangeKey(transaction).then((response)=>console.log(response)).catch(err => {console.log("Api error: " + err)
+                        console.log("Api error: " + err);
+                        message.channel.send("Hoppá! Valami hipa volt a tranzakció feldolgozásában. Kérlek próbálkozz újra kb. 4 perc múlva!")
+                        return;
+                    });
+                });
+                console.log("executed transaction")
+                message.channel.send("A " + AccToChange + " számla mostantól a tied!")
             }
             catch(err){
                 console.log("Error" + err)
+                continue;
             }
 
-        }).catch(err => console.log("ERROR! " + err ));
+        }).catch(err => {
+            console.log("ERROR! " + err );
+            message.channel.send("Hoppá! Valami hipa volt a tranzakció feldolgozásában. Kérlek próbálkozz újra kb. 4 perc múlva!");
+            return;
+        });
     }
 });
+}
+catch(err){
+    console.log(err);
+    return;
+}
 
 try {
     client.login('YOUR BOTS TOKEN');
