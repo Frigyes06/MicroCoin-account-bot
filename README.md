@@ -13,6 +13,7 @@ Then, we make a folder for the program and pull the repos:
 mkdir account-bot
 cd account-bot
 git clone https://github.com/Frigyes06/MicroCoin-account-bot
+cd MicroCoin-account-bot
 git clone https://github.com/MicroCoinHU/MicroCoin-Javacript-SDK
 ```
 Next, we install the dependencies
