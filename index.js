@@ -34,12 +34,12 @@ client.on('message', message => {
     }
     else {
         try{
-			var decoded = hexFromBase58(msg)
-		}
-		catch(err){
-			message.channel.send("Rossz a kulcsod!")
-			console.log(err)
-		}
+		var decoded = hexFromBase58(msg)
+	}
+	catch(err){
+		message.channel.send("Rossz a kulcsod!")
+		console.log(err)
+	}
         
         console.log(decoded)
         if(decoded[1] !== '1' || decoded[2] !== 'C' || decoded[3] !== 'A'){
