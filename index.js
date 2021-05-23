@@ -47,8 +47,8 @@ client.on('message', message => {
         var length = sliced.length;
         var X = sliced.slice(0, 64);
         var Y = sliced.slice(length-64, length);
-        console.hex(X)
-        console.hex(Y)
+        //console.hex(X)
+        //console.hex(Y)
 
         accountApi.myAccounts({
             "curveType":"secp256k1",
