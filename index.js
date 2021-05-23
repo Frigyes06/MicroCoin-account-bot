@@ -33,8 +33,14 @@ client.on('message', message => {
         return;
     }
     else {
-        var decoded = hexFromBase58(msg)
-
+        try{
+			var decoded = hexFromBase58(msg)
+		}
+		catch(err){
+			message.channel.send("Rossz a kulcsod!")
+			console.log(err)
+		}
+        
         console.log(decoded)
         if(decoded[1] !== '1' || decoded[2] !== 'C' || decoded[3] !== 'A'){
             message.channel.send("Rossz a kulcsod!")
