@@ -128,6 +128,7 @@ catch(err){
 
 try {
     client.login('YOUR BOTS TOKEN');
+    console.log('The bot is up and running!')
 }
 catch(err) {
     console.log(err);
