@@ -24,7 +24,7 @@ const PRIVATE_KEY = "YOUR_PRIVATE_KEY";
 const DISCORD_CHANNELS = ["465583027217760266", "477490233370214400", "465573630282039296"];
 
 var ec = new elliptic.ec("secp256k1");
-// var myKey = ec.keyPair({ "priv": PRIVATE_KEY, "privEnc": "hex" });
+var myKey = ec.keyPair({ "priv": PRIVATE_KEY, "privEnc": "hex" });
 
 var accountApi = new MicroCoin.AccountApi();
 var request = new MicroCoin.ChangeKeyRequest();
