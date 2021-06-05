@@ -1,3 +1,17 @@
+/*
+Copyright (c) 2021 Frigyes06
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+*/
+
 const elliptic = require('elliptic');
 const MicroCoin = require('micro_coin')
 const bs58 = require('bs58');
@@ -10,7 +24,7 @@ const PRIVATE_KEY = "YOUR_PRIVATE_KEY";
 const DISCORD_CHANNELS = ["465583027217760266", "477490233370214400", "465573630282039296"];
 
 var ec = new elliptic.ec("secp256k1");
-var myKey = ec.keyPair({ "priv": PRIVATE_KEY, "privEnc": "hex" });
+// var myKey = ec.keyPair({ "priv": PRIVATE_KEY, "privEnc": "hex" });
 
 var accountApi = new MicroCoin.AccountApi();
 var request = new MicroCoin.ChangeKeyRequest();
