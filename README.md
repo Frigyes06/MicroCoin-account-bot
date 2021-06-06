@@ -22,11 +22,11 @@ npm install
 ```
 Now, we have to set our private key (in HEX)
 ```
-nano index.js 6
+nano index.js 23
 ```
 Next, the Discord bot's ID
 ```
-nano index.js 104
+nano index.js 22
 ```
 After that, we can start the program:
 ```
