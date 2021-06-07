@@ -12,9 +12,9 @@ We have to check if node.js version is above 12.0.0:
 ```
 node -v
 ```
-If it is below version 12.0.0, then we have to update it manually, here is a good tutorial:
+If it is below version 12.0.0, then we have to update it manually, here is a good tutorial: <br />
 https://phoenixnap.com/kb/update-node-js-version <br />
-I advise you to download v14.17.0 (LTS) <br />
+I advise you to install v14.17.0 (LTS) <br />
 <br />
 Then, we make a folder for the program and pull the repos:
 ```
@@ -30,11 +30,15 @@ npm install
 ```
 Now, we have to set our private key (in HEX)
 ```
-nano index.js 23
+nano .env
 ```
 Next, the Discord bot's ID
 ```
-nano index.js 22
+nano +2 .env
+```
+You can change the channels that the bot will listen on:
+```
+nano +3 .env
 ```
 After that, we can start the program:
 ```
