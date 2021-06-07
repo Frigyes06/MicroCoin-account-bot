@@ -16,15 +16,12 @@ const elliptic = require('elliptic');
 const MicroCoin = require('micro_coin')
 const bs58 = require('bs58');
 const Discord = require('discord.js');
+require('dotenv').config();
 
-// PARAMETERS
-// TODO: Get all from environment variables
-const DISCORD_TOKEN = "YOUR_DISCORD_TOKEN";
-const PRIVATE_KEY = "YOUR_PRIVATE_KEY";
-const DISCORD_CHANNELS = ["465583027217760266", "477490233370214400", "465573630282039296"];
+const DISCORD_CHANNELS = process.env.DISCORD_CHANNELS.split(',');
 
 var ec = new elliptic.ec("secp256k1");
-var myKey = ec.keyPair({ "priv": PRIVATE_KEY, "privEnc": "hex" });
+var myKey = ec.keyPair({ "priv": process.env.PRIVATE_KEY, "privEnc": "hex" });
 
 var accountApi = new MicroCoin.AccountApi();
 var request = new MicroCoin.ChangeKeyRequest();
@@ -145,7 +142,7 @@ catch (err) {
 }
 
 try {
-    client.login(DISCORD_TOKEN);
+    client.login(process.env.DISCORD_TOKEN);
     console.log('The bot is up and running!')
 }
 catch (err) {
