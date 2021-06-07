@@ -8,6 +8,14 @@ First, we install node.js and npm:
 ```
 sudo apt install nodejs npm
 ```
+We have to check if node.js version is above 12.0.0:
+```
+node -v
+```
+If it is below version 12.0.0, then we have to update it manually, here is a good tutorial:
+https://phoenixnap.com/kb/update-node-js-version <br />
+I advise you to download v14.17.0 (LTS) <br />
+<br />
 Then, we make a folder for the program and pull the repos:
 ```
 mkdir account-bot
