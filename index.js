@@ -64,7 +64,7 @@ try {
                     message.channel.send("Te már kaptál számlát!");
                     return;
                 } else {
-                    fs.appendFileSync('./requested.txt', decoded);
+                    fs.appendFileSync('./requested.txt', decoded + "\r\n");
                 }
             }
             catch (err){
