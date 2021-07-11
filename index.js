@@ -17,6 +17,7 @@ const MicroCoin = require('micro_coin')
 const bs58 = require('bs58');
 const Discord = require('discord.js');
 require('dotenv').config();
+const fs = require("fs");
 
 const DISCORD_CHANNELS = process.env.DISCORD_CHANNELS.split(',');
 
@@ -55,6 +56,21 @@ try {
             return;
         }
         else {
+            try {
+                var text = fs.readFileSync("./requested.txt").toString('utf-8');
+                var requested = text.split("\r\n");
+                console.log(requested);
+                if (requested.includes(decoded)) {
+                    message.channel.send("Te már kaptál számlát!");
+                    return;
+                } else {
+                    fs.appendFileSync('./requested.txt', decoded);
+                }
+            }
+            catch (err){
+                console.log(err);
+            }
+            
             var decoded = "";
             try {
                 decoded = hexFromBase58(msg);
