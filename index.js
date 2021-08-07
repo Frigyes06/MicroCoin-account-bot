@@ -121,7 +121,7 @@ try {
                         });
                     });
                     console.log("executed transaction");
-                    message.channel.send("A(z) " + AccToChange + " számla mostantól a tied!");
+                    message.channel.send("A(z) " + AccToChange.toString() + " számla mostantól a tied!");
                 }
                 catch (err) {
                     console.error(err);
