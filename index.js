@@ -130,7 +130,7 @@ try {
 
             }).catch(err => {
                 console.error(err);
-                message.channel.send("Hoppá! Valami hipa volt a tranzakció feldolgozásában. Kérlek próbálkozz újra kb. 4 perc múlva!");
+                message.channel.send("Hoppá! Valami hiba volt a tranzakció feldolgozásában. Kérlek próbálkozz újra kb. 4 perc múlva!");
                 return;
             });
         }
