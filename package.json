@@ -11,7 +11,7 @@
   "dependencies": {
     "bs58": "^4.0.1",
     "discord.js": "^13.0.0",
-    "dotenv": "^11.0.0",
+    "dotenv": "^16.0.0",
     "elliptic": "^6.5.4",
     "micro_coin": "file:MicroCoin-Javacript-SDK"
   }
