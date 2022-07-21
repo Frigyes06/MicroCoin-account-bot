@@ -1,4 +1,4 @@
-# MicroCoin-account-bot
+# MicroCoin-account-bot (Deprecated. No longer maintained)
 
 You can download the JavaScript SDK from here: <br />
 https://github.com/MicroCoinHU/MicroCoin-Javacript-SDK
