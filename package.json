@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "bs58": "^4.0.1",
-    "discord.js": "^13.0.0",
+    "discord.js": "^14.8.0",
     "dotenv": "^16.0.0",
     "elliptic": "^6.5.4",
     "micro_coin": "file:MicroCoin-Javacript-SDK"
